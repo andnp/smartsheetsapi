@@ -4,6 +4,10 @@ var fs = require('fs');
 
 var SMARTSHEET_URL = "https://api.smartsheet.com/2.0";
 
+/**
+ * @param  {String} The ID of the sheet to grab the columns from
+ * @param  {Function} Callback function that passes back the returned JSON blob
+ */
 var getColumns = function(sheetId, onComplete){
 	fs.readFile('accesskeys.json', 'utf8', function(err, data){
 		var ACCESS_TOKEN = JSON.parse(data).smartsheet.accesstoken;

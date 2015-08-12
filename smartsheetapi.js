@@ -1,7 +1,6 @@
-var http = require('http');
-var request = require('request');
-var fs = require('fs');
-
+/**
+This is an abstraction layer to make all function accessable through a single import
+*/
 var sheet = require('./smartsheets/sheet');
 var column = require('./smartsheets/column');
 var workspace = require('./smartsheets/workspace');

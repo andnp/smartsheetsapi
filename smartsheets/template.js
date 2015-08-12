@@ -4,6 +4,9 @@ var fs = require('fs');
 
 var SMARTSHEET_URL = "https://api.smartsheet.com/2.0";
 
+/**
+ * @param  {Function} Callback that passes in the JSON blob containing the template data
+ */
 var getTemplates = function(onComplete){
 	fs.readFile('accesskeys.json', 'utf8', function(err,data){
 		var ACCESS_TOKEN = JSON.parse(data).smartsheet.accesstoken;

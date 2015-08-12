@@ -4,6 +4,9 @@ var fs = require('fs');
 
 var SMARTSHEET_URL = "https://api.smartsheet.com/2.0";
 
+/**
+ * @param  {Function} Callback that passes in the JSON blob containing a list of workspaces accessable to the user
+ */
 var getWorkspaces = function(onComplete){
 	fs.readFile('accesskeys.json', 'utf8', function(err,data){
 		var ACCESS_TOKEN = JSON.parse(data).smartsheet.accesstoken;
@@ -19,6 +22,10 @@ var getWorkspaces = function(onComplete){
 	});
 };
 
+/**
+ * @param  {String} ID of the workspace to get the data for
+ * @param  {Function} Callback that passes in the JSON blob containing the data for the requested workspace
+ */
 var getWorkspace = function(workspaceId, onComplete){
 	fs.readFile('accesskeys.json', 'utf8', function(err, data){
 		var ACCESS_TOKEN = JSON.parse(data).smartsheet.accesstoken;
